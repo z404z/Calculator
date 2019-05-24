@@ -36,7 +36,7 @@ namespace WindowsFormsApp1
         
         public void set_null()
         {
-            str = null;
+            str = "";
         }
     }
 }
