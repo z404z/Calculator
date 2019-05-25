@@ -21,18 +21,19 @@ namespace WindowsFormsApp1
 
         //Calc calc;
         //string action = "";
-        Operators ops = new Operators();
         
         List<Numbers> numList = new List<Numbers>(2);
+        Operators ops = new Operators();
 
-        void fillNumList()
+        private void fillNumList()
         {
             numList.Add(new Numbers());
             numList.Add(new Numbers());
         }
-        //кнопки формы. Комментариями пока закрыт лейбл
-        //Логика выбора переменной для заполнения в наличии ввода операции.
-        //Если пользователь не выбрал операцию - заполняем вторую переменную
+
+        //Кнопки цифровые
+        //Если пользователь не выбрал операцию - заполняем первую переменную
+        //Если пользователь выбрал операцию - заполняем вторую
         private void button1_Click(object sender, EventArgs e)
         {
             if (ops.get_op() == null)
@@ -42,8 +43,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("1");
                 textBox1.Text = numList[1].get_num();
             }
@@ -57,8 +56,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("2");
                 textBox1.Text = numList[1].get_num();
             }
@@ -72,8 +69,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("3");
                 textBox1.Text = numList[1].get_num();
             }
@@ -87,8 +82,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("4");
                 textBox1.Text = numList[1].get_num();
             }
@@ -102,8 +95,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("5");
                 textBox1.Text = numList[1].get_num();
             }
@@ -117,8 +108,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("6");
                 textBox1.Text = numList[1].get_num();
             }
@@ -132,8 +121,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("7");
                 textBox1.Text = numList[1].get_num();
             }
@@ -147,8 +134,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("8");
                 textBox1.Text = numList[1].get_num();
             }
@@ -162,8 +147,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("9");
                 textBox1.Text = numList[1].get_num();
             }
@@ -177,8 +160,6 @@ namespace WindowsFormsApp1
             }
             else
             {
-                //expression.Text = numList[0].get_num();
-                //expression.Visible = true;
                 numList[1].set_num("0");
                 textBox1.Text = numList[1].get_num();
             }
@@ -197,33 +178,81 @@ namespace WindowsFormsApp1
             }
         }
 
-
+        //Кнопки операций
+        //Если есть две переменные, при установке знака, 
+        //при установке знака происходит вычисление выражения,
+        //результат оказывается в первой переменной, ставится знак,
+        //иначе просто ставим знак
         private void sum_Click(object sender, EventArgs e)
         {
-            string operation = ops.set_op("+");
-            //expression.Text = numList[0].get_num() + operation;
-            //expression.Visible = true;
+            //string operation = ops.set_op("+");
+            if (numList[0].get_num() != "" && numList[1].get_num() != "")
+            {
+                //выясняем значение уже имеющейся операции
+                //результат пишем в первую переменную
+                calculate();
+                //ставим знак
+                string operation = ops.set_op("+");
+
+            }
+            else
+            {
+                string operation = ops.set_op("+");
+            }
         }
 
         private void sub_Click(object sender, EventArgs e)
         {
-            string operation = ops.set_op("-");
-            //expression.Text = numList[0].get_num() + operation;
-            //expression.Visible = true;
+            //string operation = ops.set_op("-");
+            if (numList[0].get_num() != "" && numList[1].get_num() != "")
+            {
+                //выясняем значение уже имеющейся операции
+                //результат пишем в первую переменную
+                calculate();
+                //ставим знак
+                string operation = ops.set_op("-");
+
+            }
+            else
+            {
+                string operation = ops.set_op("-");
+            }
         }
 
         private void div_Click(object sender, EventArgs e)
         {
-            string operation = ops.set_op("/");
-            //expression.Text = numList[0].get_num() + operation;
-            //expression.Visible = true;
+            //string operation = ops.set_op("/");
+            if (numList[0].get_num() != "" && numList[1].get_num() != "")
+            {
+                //выясняем значение уже имеющейся операции
+                //результат пишем в первую переменную
+                calculate();
+                //ставим знак
+                string operation = ops.set_op("/");
+
+            }
+            else
+            {
+                string operation = ops.set_op("/");
+            }
         }
 
         private void mult_Click(object sender, EventArgs e)
         {
-            string operation = ops.set_op("*");
-            //expression.Text = numList[0].get_num() + operation;
-            //expression.Visible = true;
+            
+            if (numList[0].get_num() != "" && numList[1].get_num() != "")
+            {
+                //выясняем значение уже имеющейся операции
+                //результат пишем в первую переменную
+                calculate();
+                //ставим знак
+                string operation = ops.set_op("*");
+
+            }
+            else
+            {
+                string operation = ops.set_op("*");
+            }
         }
 
         private void clear_Click(object sender, EventArgs e)
@@ -235,25 +264,32 @@ namespace WindowsFormsApp1
         }
         private void count_Click(object sender, EventArgs e)
         {
+            calculate();
+        }
+        //необходимо додумать появление исключений ввода
+        private void calculate()
+        {
             int a = Int32.Parse(numList[0].get_num());      //вот как мне тут исключение поймать?
             int b = Int32.Parse(numList[1].get_num());      //вот как мне тут исключение поймать?
             string op = ops.get_op();
             string result;
-
+            ///
             Calc calculate = new Calc();
-
+            ///
             calculate.set_first(a);
             calculate.set_second(b);
             calculate.set_op(op);
+            ///
             result = calculate.calculate().ToString();
+            ///
             numList[0].set_null();
             numList[1].set_null();
             ops.set_null();
+            ///
             numList[0].set_num(result);//результат сразу становится первой переменной для дальнейших вычислений 
             numList[1].set_null();     //обнуляем, для дальнейших вычислений. далее будут вводиться только вторая переменная
             textBox1.Text = result;
         }
-        //тут пусто
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

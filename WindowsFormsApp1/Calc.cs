@@ -45,73 +45,6 @@ namespace WindowsFormsApp1
             return op;
         }
 
-
-        ////public Calc()
-        ////{
-        ////    inputArray = new string[0];
-        ////}
-
-        //public void parse(string numbers)
-        //{
-        //    //int size = numbers.Length;
-        //    bool nextVar = false;
-        //    foreach (char n in numbers)
-        //    {
-        //        if ((n.ToString() is "+") || (n.ToString() is "-") || (n.ToString() is "/") || (n.ToString() is "*"))
-        //        {
-        //            nextVar = true;
-        //            op = n.ToString();
-        //            continue;
-        //        }
-        //        if (nextVar == false)
-        //        {
-        //            first += n.ToString();
-        //        }
-        //        if (nextVar == true)
-        //        {
-        //            second += n.ToString();
-        //        }
-        //    }
-
-        //}
-
-
-        //private void parseArray(string numbers)
-        //{
-        //    List<string> list = new List<string>();
-        //    /*
-        //    list.Add("one");
-        //    list.Add("two");
-        //    list.Add("three");
-        //    */
-        //    for (int i = 0; i < numbers.Length; i++)
-        //    {
-        //        bool firstNum = false;
-        //        bool secondNum = false;
-        //        char symbol = numbers[i];
-        //        //char nextSymbol = numbers[i + 1];
-
-        //        if ((symbol.ToString() is "-") && i == 0)
-        //        {
-        //            first += symbol;
-        //            firstNum = true;
-        //        }
-
-        //        if (((symbol.ToString() is "+") || (symbol.ToString() is "-") || (symbol.ToString() is "/") || (symbol.ToString() is "*")) && firstNum == true)
-        //        {
-        //            secondNum = true;
-        //            op += symbol;
-        //            continue;
-        //        }
-        //        if (secondNum == true)
-        //        {
-
-        //        }
-        //    }
-        //    string[] array = list.ToArray();
-        //}
-
-
         public int calculate()
         {
             int result = 0;
@@ -147,5 +80,72 @@ namespace WindowsFormsApp1
         }
 
     }
-    
+
+
+
+    ////public Calc()
+    ////{
+    ////    inputArray = new string[0];
+    ////}
+
+    //public void parse(string numbers)
+    //{
+    //    //int size = numbers.Length;
+    //    bool nextVar = false;
+    //    foreach (char n in numbers)
+    //    {
+    //        if ((n.ToString() is "+") || (n.ToString() is "-") || (n.ToString() is "/") || (n.ToString() is "*"))
+    //        {
+    //            nextVar = true;
+    //            op = n.ToString();
+    //            continue;
+    //        }
+    //        if (nextVar == false)
+    //        {
+    //            first += n.ToString();
+    //        }
+    //        if (nextVar == true)
+    //        {
+    //            second += n.ToString();
+    //        }
+    //    }
+
+    //}
+
+
+    //private void parseArray(string numbers)
+    //{
+    //    List<string> list = new List<string>();
+    //    /*
+    //    list.Add("one");
+    //    list.Add("two");
+    //    list.Add("three");
+    //    */
+    //    for (int i = 0; i < numbers.Length; i++)
+    //    {
+    //        bool firstNum = false;
+    //        bool secondNum = false;
+    //        char symbol = numbers[i];
+    //        //char nextSymbol = numbers[i + 1];
+
+    //        if ((symbol.ToString() is "-") && i == 0)
+    //        {
+    //            first += symbol;
+    //            firstNum = true;
+    //        }
+
+    //        if (((symbol.ToString() is "+") || (symbol.ToString() is "-") || (symbol.ToString() is "/") || (symbol.ToString() is "*")) && firstNum == true)
+    //        {
+    //            secondNum = true;
+    //            op += symbol;
+    //            continue;
+    //        }
+    //        if (secondNum == true)
+    //        {
+
+    //        }
+    //    }
+    //    string[] array = list.ToArray();
+    //}
+
 }
