@@ -23,7 +23,6 @@ namespace WindowsFormsApp1
         //string action = "";
         Operators ops = new Operators();
         
-        //Здесь храним переменные для последующих операций с ними
         List<Numbers> numList = new List<Numbers>(2);
 
         void fillNumList()
@@ -250,8 +249,8 @@ namespace WindowsFormsApp1
             numList[0].set_null();
             numList[1].set_null();
             ops.set_null();
-            numList[0].set_num(result);
-            numList[1].set_num(result);//результат сразу становится первой переменной для дальнейших вычислений           
+            numList[0].set_num(result);//результат сразу становится первой переменной для дальнейших вычислений 
+            numList[1].set_null();     //обнуляем, для дальнейших вычислений. далее будут вводиться только вторая переменная
             textBox1.Text = result;
         }
         //тут пусто
