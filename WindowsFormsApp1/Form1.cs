@@ -183,9 +183,9 @@ namespace WindowsFormsApp1
         //при установке знака происходит вычисление выражения,
         //результат оказывается в первой переменной, ставится знак,
         //иначе просто ставим знак
+            //поправить поведение операций при последовательном вводе двух и более операторов - done
         private void sum_Click(object sender, EventArgs e)
         {
-            //string operation = ops.set_op("+");
             if (numList[0].get_num() != "" && numList[1].get_num() != "")
             {
                 //выясняем значение уже имеющейся операции
@@ -194,7 +194,13 @@ namespace WindowsFormsApp1
                 //ставим знак
                 string operation = ops.set_op("+");
 
-            }
+            }//если есть первая, но нет второй переменной и есть знак операции,
+             //добавляем операцию. Внутри класса операций есть метод,
+             //который забирает последнюю операцию, если их много
+            //else if (numList[0].get_num() != "" && numList[1].get_num() == "" && ops.get_op() != null)
+            //{
+            //    string operation = ops.set_op("+");
+            //}
             else
             {
                 string operation = ops.set_op("+");
@@ -203,15 +209,10 @@ namespace WindowsFormsApp1
 
         private void sub_Click(object sender, EventArgs e)
         {
-            //string operation = ops.set_op("-");
             if (numList[0].get_num() != "" && numList[1].get_num() != "")
             {
-                //выясняем значение уже имеющейся операции
-                //результат пишем в первую переменную
                 calculate();
-                //ставим знак
                 string operation = ops.set_op("-");
-
             }
             else
             {
@@ -221,15 +222,10 @@ namespace WindowsFormsApp1
 
         private void div_Click(object sender, EventArgs e)
         {
-            //string operation = ops.set_op("/");
             if (numList[0].get_num() != "" && numList[1].get_num() != "")
             {
-                //выясняем значение уже имеющейся операции
-                //результат пишем в первую переменную
                 calculate();
-                //ставим знак
                 string operation = ops.set_op("/");
-
             }
             else
             {
@@ -239,15 +235,10 @@ namespace WindowsFormsApp1
 
         private void mult_Click(object sender, EventArgs e)
         {
-            
             if (numList[0].get_num() != "" && numList[1].get_num() != "")
             {
-                //выясняем значение уже имеющейся операции
-                //результат пишем в первую переменную
                 calculate();
-                //ставим знак
                 string operation = ops.set_op("*");
-
             }
             else
             {

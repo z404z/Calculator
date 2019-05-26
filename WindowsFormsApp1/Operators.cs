@@ -12,7 +12,14 @@ namespace WindowsFormsApp1
 
         public string get_op()
         {
-            return op;
+            if(op != null && op.Length > 1)//на случай, если будет введено больше одного знака подряд
+            {
+                return op.Last().ToString();
+            }
+            else
+            {
+                return op;
+            }          
         }
 
         public string set_op(string input)
